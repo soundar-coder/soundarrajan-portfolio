@@ -1,0 +1,30 @@
+<section id="tech-stack" class="section tech-stack">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-head__kicker">Tech Stack</span>
+      <h2>Tools I build backend systems with.</h2>
+      <p>Everything below is technology I actually use — grouped by where it sits in the stack.</p>
+    </div>
+
+    <div class="tech-stack__filters" role="tablist" aria-label="Filter technologies">
+      <button
+        *ngFor="let filter of filters"
+        type="button"
+        role="tab"
+        [attr.aria-selected]="activeFilter === filter.value"
+        class="tech-stack__filter"
+        [class.tech-stack__filter--active]="activeFilter === filter.value"
+        (click)="setFilter(filter.value)"
+      >
+        {{ filter.label }}
+      </button>
+    </div>
+
+    <div class="tech-stack__grid">
+      <div class="tech-card" *ngFor="let skill of skills">
+        <i class="tech-card__icon devicon-plain" [ngClass]="skill.icon" aria-hidden="true"></i>
+        <span class="tech-card__name">{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>

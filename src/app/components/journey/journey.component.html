@@ -1,0 +1,19 @@
+<section id="journey" class="section journey">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-head__kicker">Journey</span>
+      <h2>How I got to backend development.</h2>
+      <p>A short path from coursework to shipping full projects.</p>
+    </div>
+
+    <ol class="journey__timeline">
+      <li class="journey__step" *ngFor="let step of portfolio.journey; let i = index">
+        <div class="journey__marker">{{ i + 1 }}</div>
+        <div class="journey__body">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

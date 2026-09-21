@@ -1,0 +1,46 @@
+<div class="modal-backdrop" (click)="close()">
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="project.title"
+    (click)="$event.stopPropagation()"
+  >
+    <button type="button" class="modal__close" (click)="close()" aria-label="Close project details">
+      &times;
+    </button>
+
+    <span class="modal__kicker">Project overview</span>
+    <h3 class="modal__title">{{ project.title }}</h3>
+    <p class="modal__description">{{ project.description }}</p>
+
+    <div class="modal__block">
+      <h4>Technologies</h4>
+      <div class="modal__tags">
+        <span class="pill" *ngFor="let tech of project.technologies">{{ tech }}</span>
+      </div>
+    </div>
+
+    <div class="modal__block">
+      <h4>Key implementation details</h4>
+      <ul class="modal__list">
+        <li *ngFor="let feature of project.features">{{ feature }}</li>
+      </ul>
+    </div>
+
+    <div class="modal__actions">
+      <a
+        class="btn btn--primary"
+        [href]="project.githubUrl"
+        [class.btn--disabled]="project.githubUrl.startsWith('[')"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ project.githubUrl.startsWith('[') ? project.githubUrl : 'View on GitHub' }}
+      </a>
+      <a *ngIf="project.demoUrl" class="btn btn--ghost" [href]="project.demoUrl" target="_blank" rel="noopener">
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>

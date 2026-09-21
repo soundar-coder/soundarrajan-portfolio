@@ -1,0 +1,25 @@
+<section id="certificates" class="section certificates">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-head__kicker">Certificates</span>
+      <h2>Learning, verified.</h2>
+    </div>
+
+    <div class="certificates__grid">
+      <article class="cert-card" *ngFor="let cert of portfolio.certificates">
+        <div class="cert-card__mark" aria-hidden="true">✓</div>
+        <h3>{{ cert.title }}</h3>
+        <p>{{ cert.organization }}</p>
+        <a
+          class="cert-card__link"
+          [href]="cert.fileUrl"
+          [class.cert-card__link--placeholder]="cert.fileUrl.startsWith('[')"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ cert.fileUrl.startsWith('[') ? cert.fileUrl : 'View Certificate' }}
+        </a>
+      </article>
+    </div>
+  </div>
+</section>

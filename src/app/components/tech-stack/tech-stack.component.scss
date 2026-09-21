@@ -1,0 +1,68 @@
+.tech-stack__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.tech-stack__filter {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.tech-stack__filter:hover {
+  color: var(--text);
+  border-color: var(--text-faint);
+}
+
+.tech-stack__filter--active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tech-stack__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-2);
+  box-shadow: 0 18px 34px -22px rgba(31, 47, 152, 0.28);
+}
+
+.tech-card__icon {
+  font-size: 2rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-card:hover .tech-card__icon {
+  color: var(--accent-2);
+  transform: scale(1.08);
+}
+
+.tech-card__name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}

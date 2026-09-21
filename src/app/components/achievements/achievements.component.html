@@ -1,0 +1,22 @@
+<section id="achievements" class="section achievements">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-head__kicker">Achievements</span>
+      <h2>Problem solving, in numbers.</h2>
+    </div>
+
+    <div class="achievements__grid">
+      <a
+        class="achievement-card"
+        *ngFor="let item of portfolio.achievements"
+        [href]="item.linkUrl"
+        [class.achievement-card--placeholder]="item.linkUrl.startsWith('[')"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="achievement-card__value">{{ item.value }}</span>
+        <span class="achievement-card__label">{{ item.label }}</span>
+      </a>
+    </div>
+  </div>
+</section>

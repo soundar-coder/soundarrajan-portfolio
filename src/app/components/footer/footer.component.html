@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <p class="footer__name">SOUNDARRAJAN</p>
+      <p class="footer__role">{{ portfolio.role }}</p>
+      <p class="footer__stack">Java • Spring Boot • REST API • MySQL • Angular</p>
+    </div>
+
+    <nav class="footer__links" aria-label="Social">
+      <a
+        *ngFor="let link of portfolio.socialLinks"
+        [href]="link.url"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ link.platform }}
+      </a>
+    </nav>
+  </div>
+
+  <p class="footer__copy">© {{ year }} Soundarrajan</p>
+</footer>

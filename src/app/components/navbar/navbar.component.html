@@ -1,0 +1,35 @@
+<header class="navbar" [class.navbar--scrolled]="isScrolled">
+  <div class="navbar__inner">
+    <a href="#home" class="navbar__brand" (click)="closeMenu()">
+      SOUNDAR<span>RAJAN</span>
+    </a>
+
+    <nav class="navbar__links" aria-label="Primary">
+      <a *ngFor="let link of links" [href]="'#' + link.fragment">{{ link.label }}</a>
+    </nav>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="navbar__mobile"
+    [class.navbar__mobile--open]="isMenuOpen"
+    aria-label="Mobile"
+  >
+    <a *ngFor="let link of links" [href]="'#' + link.fragment" (click)="closeMenu()">
+      {{ link.label }}
+    </a>
+  </nav>
+</header>

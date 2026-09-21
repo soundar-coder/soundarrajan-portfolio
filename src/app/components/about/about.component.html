@@ -1,0 +1,25 @@
+<section id="about" class="section about">
+  <div class="section-inner about__grid">
+    <div class="about__figure">
+      <img src="assets/images/developer.png" alt="{{ portfolio.name }} working as a developer" />
+    </div>
+
+    <div class="about__copy">
+      <span class="section-head__kicker">About</span>
+     <h2>Full Stack Developer, building from backend to frontend.</h2>
+
+<p>
+  I'm an MCA graduate and a Full Stack Developer focused on building reliable, scalable and user-friendly web applications. I work primarily with Java and Spring Boot on the backend, designing REST APIs, implementing business logic, and working with MySQL using JDBC and Hibernate.
+</p>
+
+<p>
+  On the frontend, I work with Angular, TypeScript, JavaScript, HTML5 and CSS3 to create responsive and interactive user interfaces. I enjoy working across the complete application — from database and backend APIs to frontend components — and bringing the entire feature together as a complete product.
+</p>
+
+
+      <div class="about__tags">
+        <span class="pill" *ngFor="let tag of infoTags">{{ tag.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>

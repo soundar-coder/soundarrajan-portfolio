@@ -1,0 +1,107 @@
+<section id="home" class="hero">
+
+  <!-- subtle background -->
+  <div class="hero__bg"></div>
+
+  <div class="hero__inner">
+
+    <!-- LEFT -->
+    <div class="hero__content">
+
+      <div class="hero__eyebrow">
+        <span class="hero__dot"></span>
+        Available for opportunities
+      </div>
+
+      <p class="hero__greeting">
+        Hi, I'm
+        <span>{{ portfolio.name.split(' ')[0] }}.</span>
+      </p>
+
+      <h1 class="hero__role">
+        {{ portfolio.role }}
+      </h1>
+
+      <p class="hero__tagline">
+        {{ portfolio.tagline }}
+      </p>
+
+      <div class="hero__stackline">
+        <span>//</span>
+        {{ stackComment }}
+      </div>
+
+      <div class="hero__actions">
+
+        <a
+          href="#projects"
+          class="btn btn--primary"
+        >
+          Explore My Work
+          <span class="btn__arrow">↗</span>
+        </a>
+
+        <a
+          [href]="portfolio.resumeUrl"
+          class="btn btn--secondary"
+          download
+        >
+          Download Resume
+          <span class="btn__download">↓</span>
+        </a>
+
+      </div>
+
+      <div class="hero__bottom">
+
+        <div class="hero__social">
+
+          <a
+            *ngFor="let link of socialLinks"
+            [href]="link.url"
+            class="hero__social-link"
+            [class.hero__social-link--placeholder]="link.url.startsWith('[')"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ link.platform }}
+          </a>
+
+        </div>
+
+        <div class="hero__scroll">
+          <span class="hero__scroll-line"></span>
+          Scroll to explore
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="hero__visual">
+
+      <div class="hero__number">
+        01
+      </div>
+
+      <div class="hero__image-glow"></div>
+
+      <div class="hero__image-area">
+
+        <img
+          src="assets/images/profile.png"
+          alt="Portrait of {{ portfolio.name }}"
+          class="hero__profile"
+        />
+
+      </div>
+
+      <div class="hero__accent"></div>
+
+    </div>
+
+  </div>
+
+</section>
